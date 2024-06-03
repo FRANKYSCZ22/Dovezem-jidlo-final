@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.cerna {
+    background-color: black;
+}
+
+* {box-sizing: border-box;}
+
+.box-1 {
+    border-radius: 50%;
+}
+
+
+
+li {
+    display: inline-block;
+    margin: 2px 10px;
+}
+
+li > a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+li > a:hover {
+    color: rgb(114, 73, 154);
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(27, 65, 98);
+}
+
+a:hover {
+    color: rgb(114, 73, 154);
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+}
+
+#logo {
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    
+}
+
+#logo:hover {
+    transform:scale(1.1);
+    
+}
+
+section {
+    display: flex;
+}
+
+.cenik {
+    flex: 1 0 100px;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    color: white;
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.knoflik {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.knoflik:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.knoflik:active {
+  color: #000
+}
+
+.knoflik:active:after {
+  background: transparent;
+}
+
+.knoflik:hover:before {
+  opacity: 1;
+}
+
+.knoflik:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.knoflik:hover {
+    transform:scale(1.1)
+}
+
+.knoflik {
+  bottom: 5px;
+  
+}
+
+.cenik ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cenik a {
+    display: block;
+    margin-top: 12px;
+    padding: 6px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 600px) { 
+    nav {
+        display: flex;
+        justify-content: space-between; 
+
+    }
+    .menu {
+        display: none;
+    }
+    .menu-polozky {
+        display: block;
+        margin: 0;
+        padding: 6px;
+    }
+    nav li {
+        display: inline-block;
+        padding-left: 12px;
+    }
+    main, nav {
+        max-width: 1000px;
+        margin: auto;
+    }
+}
+
+form {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+  }
+  
+  form > input, form > button {
+    padding: 6px;
+    border: 2px solid blue;
+    font-size: 20px;
+  }
+  
+  form > input[type=text] {
+    flex: 0 1 100%;
+    color: blue;
+    border-radius: 12px 0 0 12px;
+  }
+  
+  form > input[type=text]:focus {
+    background-color: rgb(0, 0, 255);
+    outline: none;
+  }
+
+  form > input [type=submit]    {
+    flex: 0 0 80px;
+    background-color: rgb(199, 129, 129);
+    color: rgb(255, 18, 18);
+    border-radius: 0 12px 12px 0;
+
+  }
+
+  form [type=text]:focus {
+    color: black;
+    outline: none;
+
+  }
+  
+  form > button {
+    flex: 0 0 80px;
+    background-color: blue;
+    color: white;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+  }
+
+  .obrazek {
+    flex: 1 0 300px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1vw);
+    grid-gap: 15px;
+  }
+
+  .gallery__img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    transition: ease-in 0.2s;
+    padding-left: 70px;
+}
+
+  .gallery__img:hover {
+    transform:scale(1.05)   
+}
+
+  #k1 {
+    background-image: url(./images/babicák.jpeg);
+  }
+  
+  #k2 {
+    background-image: url(./images/polreiche.jpeg);
+  }
+  
+  #k3 {
+    background-image: url(./images/ramsay.jpeg);
+  }
+  
+  #k4 {
+    background-image: url(./images/sapicek.jpg);
+  }
+
+
+  @media only screen and (max-width: 10000px ) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 400px);
+    }
+
+  #k1 {
+    grid-column: 1 / 3;
+    
+  }
+  
+  #k2 {
+   grid-column: 1 / 3;
+  }
+  
+  #k3 {
+    grid-column: 1 / 3;
+  }
+  
+  #k4 {
+    grid-column: 1 / 3;
+    
+    
+  }
+    }
+  
+  .div {
+    padding: 300px;
+  }
+
+  .footer {
+    background-color: black;
+    padding: 20px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #0084ff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .send {
+    width: 400px;
+    height: 260px;
+    font-size: 260px;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    top: calc((100vh - 260px) / 2);
+    left: calc((100vw - 400px) / 2);
+    cursor: pointer;
+    transition: width 1s, height 1s, top 1s, left 1s, font-size 2s;
+  }
+  
+  .send-animate {
+    animation: 2s move, 2s fade;
+    animation-fill-mode: forwards;
+  }
+  
+  .send:hover {
+    width: 40px;
+    height: 30px;
+    font-size: 300px;
+    top: calc((50vh - 150px) / 2);
+    left: calc((100vw - 400px) / 2);
+    transition: width 1s, height 1s, top 1s, left 1s, font-size 2s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      left: calc((50vw - 220px) );
+    }
+  
+    30% {
+      left: 50vw
+    }
+  
+    60% {
+      left: 50vw
+    }
+  
+    100% {
+      left: 10000px
+    }
+  }
+  .telo {
+  background: rgb(11,11,110);
+  background: linear-gradient(90deg, rgba(11,11,110,1) 0%, rgba(2,0,36,1) 50%, rgba(11,11,110,1) 100%);
+}
